@@ -61,7 +61,7 @@ echo "g. Problemas ocorridos durante o uso dos scripts para obter lucro comercia
 echo "h. Problemas que possam ocorrer ao usar o conjunto de scripts em sistemas que não estão na lista de sistemas testados."
 echo ""
 tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
-IP=$(wget -q -qO- viperx.anasor.com)
+IP=$(wget -q -qO- ipv4.icanhazip.com)
 read -p "Para continuar confirme o IP deste servidor: " -e -i $IP ipdovps
 if [ -z "$ipdovps" ]
 then
@@ -267,6 +267,7 @@ then
 	echo ""
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Por favor insira a senha para o usuario padrao do Proxy Auth " ; tput sgr0 ; echo ""
 	htpasswd -c /etc/squid3/passwd squid
+	rm -R -F error.sh
 	clear
 fi
 if [ -d "/etc/squid/" ]
@@ -430,6 +431,7 @@ then
 	echo ""
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Por favor insira a senha para o usuario padrao do Proxy Auth " ; tput sgr0 ; echo ""
 	htpasswd -c /etc/squid/local squid
+	rm -R -F error.sh
 	clear
 fi
 echo ""
