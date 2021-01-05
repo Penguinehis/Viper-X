@@ -1,5 +1,5 @@
 <? 
 
-echo $_SERVER["REMOTE_ADDR"]; 
+echo $_SERVER["HTTP_X_REAL_IP"]; 
 
 ?>
