@@ -97,8 +97,8 @@ clear
 printf "${red}Stunnel Nao instalado revertendo modificacoes${white}"
 sleep 5
 apt-get purge stunnel4 -y 
-rm -R -F /etc/stunnel
-rm -R -F /etc/default/stunnel4
+rm -R -f /etc/stunnel
+rm -R -f /etc/default/stunnel4
 clear 
 printf "${red}Stunnel REMOVIDO${white}"
 cd $USER
@@ -128,7 +128,7 @@ change
 else
 cd /etc/stunnel
 if [ -e "stunnel.conf.bak" ]; then
-rm -R -F stunnel.conf.bak
+rm -R -f stunnel.conf.bak
 fi
 mv stunnel.conf stunnel.conf.bak
 echo -e "cert = /etc/stunnel/cert.pem \n client = no \n socket = a:SO_REUSEADDR=1 \n socket = l:TCP_NODELAY=1 \n socket = r:TCP_NODELAY=1 \n [stunnel] \n connect = 127.0.0.1:22 \n accept = $port" >> /etc/stunnel/stunnel.conf
@@ -140,7 +140,7 @@ printf "${green}Porta Stunnel Alterada para${red} : " ; echo -e $check3 | sed -n
 sleep 5
 menu
 else
-rm -R -F stunnel.conf 
+rm -R -f stunnel.conf 
 mv stunnel.conf.bak stunnel.conf
 check4=$(lsof -i -P -n | grep LISTEN | grep stunnel | sed -n -e '1{s/^.*://p}')
 clear
