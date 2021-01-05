@@ -22,7 +22,7 @@ esac
 
 update(){
     rm -R /bin/updatepackinstall
-	wget -q http://viperx.anasor.com/updater/updatepackinstall2.sh -O /bin/updatepackinstall
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/updater/updatepackinstall2.sh -O /bin/updatepackinstall
 	chmod +x /bin/updatepackinstall
 	updatepackinstall
 	clear
