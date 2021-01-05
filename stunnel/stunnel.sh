@@ -37,7 +37,7 @@ clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "SSL TUNNEL" ; tput sgr0 ; echo ""
 tput setaf 7 ; tput setab 4 ; tput bold ; printf "${red}Portas abertas: " ; echo $port2 | sed -n 's_([^ ]*__p' ; tput sgr0 ; echo ""
 tput setaf 2 ; tput bold ; printf '%s' "|1|"; tput setaf 6 ; printf '%s' " Instalar" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Instalar o SSL Tunnel" ; tput sgr0 ;
-tput setaf 2 ; tput bold ; printf '%s' "|2|"; tput setaf 6 ; printf '%s' " Desinstalar" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Remover o SSL Tunnel" ; tput sgr0 ;
+tput setaf 2 ; tput bold ; printf '%s' "|2|"; tput setaf 6 ; printf '%s' " Mudar porta" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Mudar a porta do SSL Tunnel" ; tput sgr0 ;
 tput setaf 2 ; tput bold ; printf '%s' "|3|"; tput setaf 6 ; printf '%s' " Mudar porta" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Mudar a porta do SSL Tunnel" ; tput sgr0 ;
 tput setaf 2 ; tput bold ; printf '%s' "|0|"; tput setaf 6 ; printf '%s' " Voltar para o menu" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Simplesmente voltara para o menu" ; tput sgr0 ;
 echo ""
