@@ -89,7 +89,7 @@ check3=$(lsof -i -P -n | grep LISTEN | grep stunnel | sed -n -e '1{s/^.*://p}')
 if [[ "$check3" == *"$port"* ]]; then
 clear
 printf "${green}Stunnel Instalado na Porta: ${red}" ; echo $check3 | sed -n 's_([^ ]*__p' ; printf "${white}"
-cd $USER
+cd $HOME
 sleep 5
 menu
 else
@@ -101,7 +101,7 @@ rm -R -f /etc/stunnel
 rm -R -f /etc/default/stunnel4
 clear 
 printf "${red}Stunnel REMOVIDO${white}"
-cd $USER
+cd $HOME
 sleep 3
 menu
 fi 
