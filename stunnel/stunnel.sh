@@ -48,7 +48,7 @@ case $opcao in
 	1) install ;;
 	2) change ;;
 	3) remove ;;
-	0) exit ;;
+	0) voltar ;;
 esac
 
 }
@@ -174,5 +174,10 @@ printf "${red} REMOCAO CANCELADA" ; printf "${white}"
 sleep 5
 menu
 fi
+}
+
+voltar()
+{
+/etc/dragoncore/panel/viper
 }
 menu
