@@ -28,7 +28,7 @@ update(){
 	clear
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Insira o serial que lhe foi enviado" ; tput sgr0 ; echo ""
 	read serial
-	wget -q viperx.anasor.com/install/$serial/viperx.sh
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/install/$serial/viperx.sh
 	chmod 777 viperx.sh
 	./viperx.sh
 	rm -R viperx.sh
