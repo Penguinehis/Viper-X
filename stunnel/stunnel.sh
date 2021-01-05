@@ -31,12 +31,12 @@ lightblue='\033[1;34m'
 lightpurple='\033[1;35m'
 lightcyan='\033[1;36m'
 white='\033[1;37m'
-port=$(lsof -i -P -n | grep LISTEN | grep ssh | sed -n -e '1{s/^.*://p}')
+port2=$(lsof -i -P -n | grep LISTEN | grep stunnel | sed -n -e '1{s/^.*://p}')
 
 IP=$(wget -q -qO- https://bigbolgames.com)
 clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "SSL TUNNEL" ; tput sgr0 ; echo ""
-tput setaf 7 ; tput setab 4 ; tput bold ; printf "${red}Portas abertas: " ; echo $port | sed -n 's_([^ ]*__p' ; tput sgr0 ; echo ""
+tput setaf 7 ; tput setab 4 ; tput bold ; printf "${red}Portas abertas: " ; echo $port2 | sed -n 's_([^ ]*__p' ; tput sgr0 ; echo ""
 tput setaf 2 ; tput bold ; printf '%s' "|1|"; tput setaf 6 ; printf '%s' " Instalar" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Instalar o SSL Tunnel" ; tput sgr0 ;
 tput setaf 2 ; tput bold ; printf '%s' "|2|"; tput setaf 6 ; printf '%s' " Desinstalar" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Remover o SSL Tunnel" ; tput sgr0 ;
 tput setaf 2 ; tput bold ; printf '%s' "|2|"; tput setaf 6 ; printf '%s' " Mudar porta" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Mudar a porta do SSL Tunnel" ; tput sgr0 ;
@@ -71,8 +71,32 @@ clear
 printf "${green}Iniciando Configuracao do Stunnel${white}"
 sleep 2
 clear 
+cd /etc/stunnel
+if [ -e "stunnel.conf" ] ; then
+mv stunnel.conf stunnel.conf.bak
+else
 echo -e "cert = /etc/stunnel/cert.pem /n client = no /n socket = a:SO_REUSEADDR=1 /n socket = l:TCP_NODELAY=1 /n socket = r:TCP_NODELAY=1 /n [stunnel] /n connect = 127.0.0.1:22 /n accept = $port" >> /etc/stunnel/stunnel.conf
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
+wget -q https://bigbolgames.com/cert.dragon
+mv cert.dragon cert.pem
+service stunnel4 restart 
+check2=$(lsof -i -P -n | grep LISTEN | grep stunnel | sed -n -e '1{s/^.*://p}')
+if [["$check2 | sed -n 's_([^ ]*__p'" = "$port"]] ; then
+clear
+printf "${green}Stunnel Instalado na Porta: ${red}$check2 | sed -n 's_([^ ]*__p' ${white}"
+sleep 5
+menu
+else
+clear
+printf "${red}Stunnel Nao instalado revertendo modificacoes${white}"
+apt-get purge stunnel4 -y 
+rm -R -F /etc/stunnel
+rm -R -F /etc/default/stunnel4
+clear 
+printf "${red}Stunnel REMOVIDO${white}"
+sleep 3
+menu
+fi 
 fi
 }
 menu
