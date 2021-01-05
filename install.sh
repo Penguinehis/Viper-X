@@ -28,17 +28,17 @@ update(){
 	clear
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Insira o serial: J3WF-GD9X-8UAW-CMMC-WAU8" ; tput sgr0 ; echo ""
 	read serial
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/error/error.sh
 	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/install/$serial/viperx.sh
+	if [ -e "viper.sh" ] ; then
 	chmod +x viperx.sh
 	./viperx.sh
 	rm -R viperx.sh
 	clear
-	chmod +x error.sh
-	./error.sh
-	rm -R error.sh
 	cd /etc/
 	rm -R penguinvps
+	else
+	echo "Serial INCORRETO, ou Erro na conexao!"
+	fi
 	exit
 }
 

@@ -267,7 +267,6 @@ then
 	echo ""
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Por favor insira a senha para o usuario padrao do Proxy Auth " ; tput sgr0 ; echo ""
 	htpasswd -c /etc/squid3/passwd squid
-	rm -R -F error.sh
 	clear
 fi
 if [ -d "/etc/squid/" ]
@@ -431,7 +430,6 @@ then
 	echo ""
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Por favor insira a senha para o usuario padrao do Proxy Auth " ; tput sgr0 ; echo ""
 	htpasswd -c /etc/squid/local squid
-	rm -R -F error.sh
 	clear
 fi
 echo ""
