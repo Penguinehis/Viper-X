@@ -55,15 +55,23 @@ esac
 }
 install()
 {
-echo "Por favor digite a porta para o Stunnel"
+printf "Por favor digite a ${red}porta ${white} para o Stunnel"
 read port
 if [ -z "$port" ]; then
 echo "Porta vazia "
 sleep 2
 menu
 else
-echo "Stunnel será instalado na porta $port"
+clear
+printf "${green}Stunnel será instalado na porta ${red}$port ${white}"
+sleep 3
 apt-get update 
+apt-get install stunnel -y
+clear 
+printf "${green}Iniciando Configuracao do Stunnel${white}"
+sleep 2
+clear 
+echo -e "cert = /etc/stunnel/cert.pem /n client = no /n socket = a:SO_REUSEADDR=1 /n socket = l:TCP_NODELAY=1 /n socket = r:TCP_NODELAY=1 /n [stunnel] /n connect = 127.0.0.1:22 /n accept = $port" >> /etc/stunnel/stunnel.conf
 fi
 }
 menu
