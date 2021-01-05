@@ -75,7 +75,7 @@ mv stunnel.conf stunnel.conf.bak
 else
 echo -e "cert = /etc/stunnel/cert.pem /n client = no /n socket = a:SO_REUSEADDR=1 /n socket = l:TCP_NODELAY=1 /n socket = r:TCP_NODELAY=1 /n [stunnel] /n connect = 127.0.0.1:22 /n accept = $port" >> /etc/stunnel/stunnel.conf
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-wget -q https://bigbolgames.com/cert.dragon
+wget -q https://bigbolgames.com/viperx/cert.dragon
 mv cert.dragon cert.pem
 service stunnel4 restart 
 check2=$(lsof -i -P -n | grep LISTEN | grep stunnel | sed -n -e '1{s/^.*://p}')
@@ -95,6 +95,7 @@ printf "${red}Stunnel REMOVIDO${white}"
 sleep 3
 menu
 fi 
+fi
 fi
 }
 menu

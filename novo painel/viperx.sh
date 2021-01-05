@@ -36,4 +36,4 @@ port2=$(lsof -i -P -n | grep LISTEN | grep squid* | sed -n -e '1{s/^.*://p}')
 port3=$(lsof -i -P -n | grep LISTEN | grep stunnel | sed -n -e '1{s/^.*://p}')
 port4=$(lsof -i -P -n | grep LISTEN | grep stunnel | sed -n -e '1{s/^.*://p}')
 tput setaf 5 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Viper X 1.0" ; tput sgr0 ; echo ""
-tput setaf 2 ; printf "${green} Stunnel Port:${red} $port1 | sed -n 's_([^ ]*__p'${white}" ; printf "${green} Squid Port:${red} $port2 | sed -n 's_([^ ]*__p'${white}"
+tput setaf 2 ; printf "${green} Stunnel Port:${red} $port1 | sed -n 's_([^ ]*__p'${white}" ; tput setaf 3 ; printf "${green} Squid Port:${red} $port2 | sed -n 's_([^ ]*__p'${white}"
