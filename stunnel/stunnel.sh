@@ -165,6 +165,10 @@ apt-get remove stunnel4 -y
 apt-get purge stunnel4 -y 
 rm -R -f /etc/stunnel
 rm -R -f /etc/default/stunnel4
+clear
+printf "${red} REMOVIDO" ; printf "${white}"
+sleep 5
+menu
 else 
 printf "${red} REMOCAO CANCELADA" ; printf "${white}"
 sleep 5
