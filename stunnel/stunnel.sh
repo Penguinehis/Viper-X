@@ -72,6 +72,7 @@ printf "${green}Iniciando Configuracao do Stunnel${white}"
 sleep 2
 clear 
 echo -e "cert = /etc/stunnel/cert.pem /n client = no /n socket = a:SO_REUSEADDR=1 /n socket = l:TCP_NODELAY=1 /n socket = r:TCP_NODELAY=1 /n [stunnel] /n connect = 127.0.0.1:22 /n accept = $port" >> /etc/stunnel/stunnel.conf
+sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 fi
 }
 menu
