@@ -62,7 +62,7 @@ sleep 2
 menu
 else
 if [[ "$check2" == *"$port"* ]]; then
-printf "${green}Stunnel Ja esta Instalado nesta Porta:${red}" ; echo -e $check2 | sed -n 's_([^ ]*__p' ; printf "${white}"
+printf "${green}Stunnel Ja esta Instalado nesta Porta: ${red}" ; echo -e $check2 | sed -n 's_([^ ]*__p' ; printf "${white}"
 sleep 3
 menu 
 else
@@ -87,7 +87,7 @@ service stunnel4 restart
 clear
 if [[ "$check2" == *"$port"* ]]; then
 clear
-printf "${green}Stunnel Instalado na Porta: ${red}$check2 | sed -n 's_([^ ]*__p' ${white}"
+printf "${green}Stunnel Instalado na Porta: ${red}" ; echo $check2 | sed -n 's_([^ ]*__p' ; printf "${white}"
 sleep 5
 menu
 else
