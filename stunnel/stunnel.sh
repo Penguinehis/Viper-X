@@ -138,6 +138,7 @@ if [[ "$check3" == *"$port"* ]]; then
 clear
 printf "${green}Porta Stunnel Alterada para${red} : " ; echo -e $check3 | sed -n 's_([^ ]*__p' ; printf "${white}"
 sleep 5
+menu
 else
 rm -R -F stunnel.conf 
 mv stunnel.conf.bak stunnel.conf
