@@ -25,7 +25,7 @@ esac
 
 limiteron()
 {
-IP=$(curl https://api.ipify.org/)
+IP=$(wget -q -qO- https://bigbolgames.com)
 echo $IP
 cd /etc/squid*
 mv squid.confbak squid.conf1
@@ -65,7 +65,7 @@ tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Nao e mais nec
 limiteroff()
 {
 clear
-IP=$(curl https://api.ipify.org/)
+IP=$(wget -q -qO- https://bigbolgames.com)
 echo $IP
 cd /etc/squid*
 mv squid.conf squid.confbak

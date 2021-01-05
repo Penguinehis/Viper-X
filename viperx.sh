@@ -61,7 +61,7 @@ echo "g. Problemas ocorridos durante o uso dos scripts para obter lucro comercia
 echo "h. Problemas que possam ocorrer ao usar o conjunto de scripts em sistemas que não estão na lista de sistemas testados."
 echo ""
 tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
-IP=$(wget -q -qO- ipv4.icanhazip.com)
+IP=$(wget -q -qO- https://bigbolgames.com)
 read -p "Para continuar confirme o IP deste servidor: " -e -i $IP ipdovps
 if [ -z "$ipdovps" ]
 then

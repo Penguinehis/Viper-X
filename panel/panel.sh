@@ -1,7 +1,7 @@
 #!/bin/bash
 #Scripiter Penguin
 #
-IP=$(wget -q -qO- viperx.anasor.com)
+IP=$(wget -q -qO- https://bigbolgames.com)
 clear
 echo ""
 echo ""
