@@ -153,5 +153,22 @@ fi
 fi
 }
 remove()
-
+{
+printf "${red} DESEJA REALMENTE REMOVER O SSL TUNNEL? digite 0129 : "
+read rmd
+if [[ "$rmd" == *"0129"* ]]; then
+printf "${red} ULTIMA CHANCE DE CANCELAR em 10 SEGUNDOS SERA REMOVIDO DE CTRL + C SE DESEJA CANCELAR"
+sleep 11
+clear
+service stunnel4 stop
+apt-get remove stunnel4 -y
+apt-get purge stunnel4 -y 
+rm -R -f /etc/stunnel
+rm -R -f /etc/default/stunnel4
+else 
+printf "${red} REMOCAO CANCELADA"
+sleep 5
+menu
+fi
+}
 menu
