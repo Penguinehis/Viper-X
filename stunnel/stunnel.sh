@@ -53,7 +53,7 @@ esac
 }
 install()
 {
-printf "Por favor digite a ${red}porta ${white} para o Stunnel"
+printf "Por favor digite a ${red}porta ${white} para o Stunnel: "
 read port
 if [ -z "$port" ]; then
 echo "Porta vazia "
