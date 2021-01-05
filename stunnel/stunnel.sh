@@ -32,8 +32,6 @@ lightpurple='\033[1;35m'
 lightcyan='\033[1;36m'
 white='\033[1;37m'
 port2=$(lsof -i -P -n | grep LISTEN | grep stunnel | sed -n -e '1{s/^.*://p}')
-
-IP=$(wget -q -qO- https://bigbolgames.com)
 clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "SSL TUNNEL" ; tput sgr0 ; echo ""
 tput setaf 7 ; tput setab 4 ; tput bold ; printf "${red}Portas abertas: " ; echo $port2 | sed -n 's_([^ ]*__p' ; tput sgr0 ; echo ""
