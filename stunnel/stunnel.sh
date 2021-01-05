@@ -85,9 +85,10 @@ wget -q https://bigbolgames.com/viperx/cert.dragon
 mv cert.dragon cert.pem
 service stunnel4 restart 
 clear
-if [[ "$check2" == *"$port"* ]]; then
+check3=$(lsof -i -P -n | grep LISTEN | grep stunnel | sed -n -e '1{s/^.*://p}')
+if [[ "$check3" == *"$port"* ]]; then
 clear
-printf "${green}Stunnel Instalado na Porta: ${red}" ; echo $check2 | sed -n 's_([^ ]*__p' ; printf "${white}"
+printf "${green}Stunnel Instalado na Porta: ${red}" ; echo $check3 | sed -n 's_([^ ]*__p' ; printf "${white}"
 sleep 5
 menu
 else
