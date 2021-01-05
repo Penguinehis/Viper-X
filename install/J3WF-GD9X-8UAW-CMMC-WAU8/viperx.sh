@@ -89,7 +89,7 @@ tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "Aguarde a configuraÃ§Ã
 sleep 3
 apt-get update -y
 apt-get upgrade -y
-rm /bin/criarusuario /bin/expcleaner /bin/sshlimiter /bin/addhost /bin/listar /bin/sshmonitor /bin/ajuda > /dev/null
+rm /etc/dragoncore/criarusuario /etc/dragoncore/expcleaner /etc/dragoncore/sshlimiter /etc/dragoncore/addhost /etc/dragoncore/listar /etc/dragoncore/sshmonitor /etc/dragoncore/ajuda > /dev/null
 rm /root/ExpCleaner.sh /root/CriarUsuario.sh /root/sshlimiter.sh > /dev/null
 apt-get install squid -y
 apt-get install bc -y
@@ -122,147 +122,147 @@ then
 	service ssh restart
 	service squid3 restart
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Instalando Modulos Por Favor Aguarde " ; tput sgr0 ; echo ""
-    wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/squid/squidconf.sh -O /bin/squidconf
-	chmod +x /bin/squidconf
-	dos2unix /bin/squidconf
+    wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/squid/squidconf.sh -O /etc/dragoncore/squidconf
+	chmod +x /etc/dragoncore/squidconf
+	dos2unix /etc/dragoncore/squidconf
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Squid Auth Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/alterarsenha.sh -O /bin/alterarsenha
-	chmod +x /bin/alterarsenha
-	dos2unix /bin/alterarsenha
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/alterarsenha.sh -O /etc/dragoncore/alterarsenha
+	chmod +x /etc/dragoncore/alterarsenha
+	dos2unix /etc/dragoncore/alterarsenha
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Change Password Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/criarusuario2.sh -O /bin/criarusuario
-	chmod +x /bin/criarusuario
-	dos2unix /bin/criarusuario
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/criarusuario2.sh -O /etc/dragoncore/criarusuario
+	chmod +x /etc/dragoncore/criarusuario
+	dos2unix /etc/dragoncore/criarusuario
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Create user Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/expcleaner2.sh -O /bin/expcleaner
-	chmod +x /bin/expcleaner
-	dos2unix /bin/expcleaner
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/expcleaner2.sh -O /etc/dragoncore/expcleaner
+	chmod +x /etc/dragoncore/expcleaner
+	dos2unix /etc/dragoncore/expcleaner
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Clear Expired Users Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/mudardata.sh -O /bin/mudardata
-	chmod +x /bin/mudardata
-	dos2unix /bin/mudardata
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/mudardata.sh -O /etc/dragoncore/mudardata
+	chmod +x /etc/dragoncore/mudardata
+	dos2unix /etc/dragoncore/mudardata
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Change Date Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/remover.sh -O /bin/remover
-	chmod +x /bin/remover
-	dos2unix /bin/remover
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/remover.sh -O /etc/dragoncore/remover
+	chmod +x /etc/dragoncore/remover
+	dos2unix /etc/dragoncore/remover
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Remove Users Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/sshlimiter2.sh -O /bin/sshlimiter
-	chmod +x /bin/sshlimiter
-	dos2unix /bin/sshlimiter
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/sshlimiter2.sh -O /etc/dragoncore/sshlimiter
+	chmod +x /etc/dragoncore/sshlimiter
+	dos2unix /etc/dragoncore/sshlimiter
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo SSh Limiter Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/alterarlimite.sh -O /bin/alterarlimite
-	chmod +x /bin/alterarlimite
-	dos2unix /bin/alterarlimite
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/alterarlimite.sh -O /etc/dragoncore/alterarlimite
+	chmod +x /etc/dragoncore/alterarlimite
+	dos2unix /etc/dragoncore/alterarlimite
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Change Limit Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/panel.sh -O /bin/panel
-	chmod +x /bin/panel
-	dos2unix /bin/panel
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/panel.sh -O /etc/dragoncore/panel
+	chmod +x /etc/dragoncore/panel
+	dos2unix /etc/dragoncore/panel
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Panel Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/sshmonitor2.sh -O /bin/sshmonitor
-	chmod +x /bin/sshmonitor
-	dos2unix /bin/sshmonitor
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/sshmonitor2.sh -O /etc/dragoncore/sshmonitor
+	chmod +x /etc/dragoncore/sshmonitor
+	dos2unix /etc/dragoncore/sshmonitor
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo SSH Monitor Installed " ; tput sgr0 ; echo ""
 	mkdir /etc/penguin > /dev/null
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/py/speedtest.sh -O /bin/speedtest
-	chmod +x /bin/speedtest
-	dos2unix /bin/speedtest
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/py/speedtest.sh -O /etc/dragoncore/speedtest
+	chmod +x /etc/dragoncore/speedtest
+	dos2unix /etc/dragoncore/speedtest
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Speed Test Installed " ; tput sgr0 ; echo ""
 	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/py/speedtest.py
 	mv speedtest.py /etc/penguin
 	chmod +x /etc/penguin/speedtest.py
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Speed Test Python Configured " ; tput sgr0 ; echo ""
-    wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/usuarioteste.sh -O /bin/usuarioteste
-	chmod +x /bin/usuarioteste
-	dos2unix /bin/usuarioteste
+    wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/usuarioteste.sh -O /etc/dragoncore/usuarioteste
+	chmod +x /etc/dragoncore/usuarioteste
+	dos2unix /etc/dragoncore/usuarioteste
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo User Temp Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/banner.sh -O /bin/banner
-	chmod +x /bin/banner
-	dos2unix /bin/banner
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/banner.sh -O /etc/dragoncore/banner
+	chmod +x /etc/dragoncore/banner
+	dos2unix /etc/dragoncore/banner
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Banner Set Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/systemdetails.sh -O /bin/systemdetails
-	chmod +x /bin/systemdetails
-	dos2unix /bin/systemdetails
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/systemdetails.sh -O /etc/dragoncore/systemdetails
+	chmod +x /etc/dragoncore/systemdetails
+	dos2unix /etc/dragoncore/systemdetails
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo System Details Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/updatepack.sh -O /bin/updatepack
-	chmod +x /bin/updatepack
-	dos2unix /bin/updatepack
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/updatepack.sh -O /etc/dragoncore/updatepack
+	chmod +x /etc/dragoncore/updatepack
+	dos2unix /etc/dragoncore/updatepack
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Update Manager Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/firewallblock.sh -O /bin/firewallblock
-	chmod +x /bin/firewallblock
-	dos2unix /bin/firewallblock
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/firewallblock.sh -O /etc/dragoncore/firewallblock
+	chmod +x /etc/dragoncore/firewallblock
+	dos2unix /etc/dragoncore/firewallblock
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Torrent Firewall Block Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/versao.sh -O /bin/versao
-	chmod +x /bin/versao
-	dos2unix /bin/versao
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/versao.sh -O /etc/dragoncore/versao
+	chmod +x /etc/dragoncore/versao
+	dos2unix /etc/dragoncore/versao
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Version Manager Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/limiter.sh -O /bin/limiter
-	chmod +x /bin/limiter
-	dos2unix /bin/limiter
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/limiter.sh -O /etc/dragoncore/limiter
+	chmod +x /etc/dragoncore/limiter
+	dos2unix /etc/dragoncore/limiter
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Panel Limiter Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/proxypanel.sh -O /bin/proxypanel
-	chmod +x /bin/proxypanel
-	dos2unix /bin/proxypanel
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/proxypanel.sh -O /etc/dragoncore/proxypanel
+	chmod +x /etc/dragoncore/proxypanel
+	dos2unix /etc/dragoncore/proxypanel
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Proxy Auth Change Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/badvpnsetup.sh -O /bin/badvpnsetup
-	chmod +x /bin/badvpnsetup
-	dos2unix /bin/badvpnsetup
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/badvpnsetup.sh -O /etc/dragoncore/badvpnsetup
+	chmod +x /etc/dragoncore/badvpnsetup
+	dos2unix /etc/dragoncore/badvpnsetup
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo BadVPNSetup Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/openvpnsetup.sh -O /bin/openvpnsetup
-	chmod +x /bin/openvpnsetup
-	dos2unix /bin/openvpnsetup
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/openvpnsetup.sh -O /etc/dragoncore/openvpnsetup
+	chmod +x /etc/dragoncore/openvpnsetup
+	dos2unix /etc/dragoncore/openvpnsetup
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo OpenVPN Setup Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/tcptweaker.sh -O /bin/tcptweaker
-	chmod +x /bin/tcptweaker
-	dos2unix /bin/tcptweaker
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/tcptweaker.sh -O /etc/dragoncore/tcptweaker
+	chmod +x /etc/dragoncore/tcptweaker
+	dos2unix /etc/dragoncore/tcptweaker
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo TCP Twaker Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/userbackup.sh -O /bin/userbackup
-	chmod +x /bin/userbackup
-	dos2unix /bin/userbackup
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/userbackup.sh -O /etc/dragoncore/userbackup
+	chmod +x /etc/dragoncore/userbackup
+	dos2unix /etc/dragoncore/userbackup
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo User Backup Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/webmininstall.sh -O /bin/webmininstall
-	chmod +x /bin/webmininstall
-	dos2unix /bin/webmininstall
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/webmininstall.sh -O /etc/dragoncore/webmininstall
+	chmod +x /etc/dragoncore/webmininstall
+	dos2unix /etc/dragoncore/webmininstall
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo WEBMIN Installer Online " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/panel2.sh -O /bin/panel2
-	chmod +x /bin/panel2
-	dos2unix /bin/panel2
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/panel2.sh -O /etc/dragoncore/panel2
+	chmod +x /etc/dragoncore/panel2
+	dos2unix /etc/dragoncore/panel2
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Page 2 Panel Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/automaticboot.sh -O /bin/automaticboot
-	chmod +x /bin/automaticboot
-	dos2unix /bin/automaticboot
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/automaticboot.sh -O /etc/dragoncore/automaticboot
+	chmod +x /etc/dragoncore/automaticboot
+	dos2unix /etc/dragoncore/automaticboot
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Automatic BOOT Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/uninstallvps.sh -O /bin/uninstallvps
-	chmod +x /bin/uninstallvps
-	dos2unix /bin/uninstallvps
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/uninstallvps.sh -O /etc/dragoncore/uninstallvps
+	chmod +x /etc/dragoncore/uninstallvps
+	dos2unix /etc/dragoncore/uninstallvps
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo de desinstalacao de nosso vps manager instalado com sucesso" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/vpntime.sh -O /bin/vpntime
-	chmod +x /bin/vpntime
-	dos2unix /bin/vpntime
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/vpntime.sh -O /etc/dragoncore/vpntime
+	chmod +x /etc/dragoncore/vpntime
+	dos2unix /etc/dragoncore/vpntime
 	cd /$USER 
 	mkdir arquivosopenvpn
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo de OpenVPn Com Validade Instalado" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/vpnauth.sh -O /bin/vpnauth
-	chmod +x /bin/vpnauth
-	dos2unix /bin/vpnauth
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/vpnauth.sh -O /etc/dragoncore/vpnauth
+	chmod +x /etc/dragoncore/vpnauth
+	dos2unix /etc/dragoncore/vpnauth
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo de OpenVPn Com Validade e Proxy Auth Instalado" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/userpassgenerator.sh -O /bin/userpassgenerator
-	chmod +x /bin/userpassgenerator
-	dos2unix /bin/userpassgenerator
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/userpassgenerator.sh -O /etc/dragoncore/userpassgenerator
+	chmod +x /etc/dragoncore/userpassgenerator
+	dos2unix /etc/dragoncore/userpassgenerator
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo UserPass.conf Generator Instalado" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/nloadpanel.sh -O /bin/nloadpanel
-	chmod +x /bin/nloadpanel
-	dos2unix /bin/nloadpanel
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/nloadpanel.sh -O /etc/dragoncore/nloadpanel
+	chmod +x /etc/dragoncore/nloadpanel
+	dos2unix /etc/dragoncore/nloadpanel
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Nload Panel Instalado" ; tput sgr0 ; echo ""
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo UserPass.conf Generator Instalado" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/hlemon.sh -O /bin/hlemon
-	chmod +x /bin/hlemon
-	dos2unix /bin/hlemon
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/hlemon.sh -O /etc/dragoncore/hlemon
+	chmod +x /etc/dragoncore/hlemon
+	dos2unix /etc/dragoncore/hlemon
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo HTOP Panel Instalado" ; tput sgr0 ; echo ""
 	panel
 	clear
-    wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/viperx.sh -O /bin/viperx
-	chmod +x /bin/viperx
-	dos2unix /bin/viperx
+    wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/viperx.sh -O /etc/dragoncore/viperx
+	chmod +x /etc/dragoncore/viperx
+	dos2unix /etc/dragoncore/viperx
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo ViperX Instalado " ; tput sgr0 ; echo ""
 	echo ""
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Por favor insira a senha para o usuario padrao do Proxy Auth " ; tput sgr0 ; echo ""
@@ -285,146 +285,146 @@ then
 	service ssh restart
 	service squid restart
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Instalando Modulos Por Favor Aguarde " ; tput sgr0 ; echo ""
-    wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/squid2/squidconf.sh -O /bin/squidconf
-	chmod +x /bin/squidconf
-	dos2unix /bin/squidconf
+    wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/squid2/squidconf.sh -O /etc/dragoncore/squidconf
+	chmod +x /etc/dragoncore/squidconf
+	dos2unix /etc/dragoncore/squidconf
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Squid Auth Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/alterarsenha.sh -O /bin/alterarsenha
-	chmod +x /bin/alterarsenha
-	dos2unix /bin/alterarsenha
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/alterarsenha.sh -O /etc/dragoncore/alterarsenha
+	chmod +x /etc/dragoncore/alterarsenha
+	dos2unix /etc/dragoncore/alterarsenha
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Change Password Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/criarusuario2.sh -O /bin/criarusuario
-	chmod +x /bin/criarusuario
-	dos2unix /bin/criarusuario
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/criarusuario2.sh -O /etc/dragoncore/criarusuario
+	chmod +x /etc/dragoncore/criarusuario
+	dos2unix /etc/dragoncore/criarusuario
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Create user Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/expcleaner2.sh -O /bin/expcleaner
-	chmod +x /bin/expcleaner
-	dos2unix /bin/expcleaner
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/expcleaner2.sh -O /etc/dragoncore/expcleaner
+	chmod +x /etc/dragoncore/expcleaner
+	dos2unix /etc/dragoncore/expcleaner
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Clear Expired Users Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/mudardata.sh -O /bin/mudardata
-	chmod +x /bin/mudardata
-	dos2unix /bin/mudardata
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/mudardata.sh -O /etc/dragoncore/mudardata
+	chmod +x /etc/dragoncore/mudardata
+	dos2unix /etc/dragoncore/mudardata
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Change Date Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/remover.sh -O /bin/remover
-	chmod +x /bin/remover
-	dos2unix /bin/remover
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/remover.sh -O /etc/dragoncore/remover
+	chmod +x /etc/dragoncore/remover
+	dos2unix /etc/dragoncore/remover
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Remove Users Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/sshlimiter2.sh -O /bin/sshlimiter
-	chmod +x /bin/sshlimiter
-	dos2unix /bin/sshlimiter
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/sshlimiter2.sh -O /etc/dragoncore/sshlimiter
+	chmod +x /etc/dragoncore/sshlimiter
+	dos2unix /etc/dragoncore/sshlimiter
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo SSh Limiter Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/alterarlimite.sh -O /bin/alterarlimite
-	chmod +x /bin/alterarlimite
-	dos2unix /bin/alterarlimite
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/alterarlimite.sh -O /etc/dragoncore/alterarlimite
+	chmod +x /etc/dragoncore/alterarlimite
+	dos2unix /etc/dragoncore/alterarlimite
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Change Limit Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/panel.sh -O /bin/panel
-	chmod +x /bin/panel
-	dos2unix /bin/panel
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/panel.sh -O /etc/dragoncore/panel
+	chmod +x /etc/dragoncore/panel
+	dos2unix /etc/dragoncore/panel
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Panel Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/sshmonitor2.sh -O /bin/sshmonitor
-	chmod +x /bin/sshmonitor
-	dos2unix /bin/sshmonitor
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/sshmonitor2.sh -O /etc/dragoncore/sshmonitor
+	chmod +x /etc/dragoncore/sshmonitor
+	dos2unix /etc/dragoncore/sshmonitor
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo SSH Monitor Installed " ; tput sgr0 ; echo ""
 	mkdir /etc/penguin > /dev/null
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/py/speedtest.sh -O /bin/speedtest
-	chmod +x /bin/speedtest
-	dos2unix /bin/speedtest
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/py/speedtest.sh -O /etc/dragoncore/speedtest
+	chmod +x /etc/dragoncore/speedtest
+	dos2unix /etc/dragoncore/speedtest
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Speed Test Installed " ; tput sgr0 ; echo ""
 	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/py/speedtest.py
 	mv speedtest.py /etc/penguin
 	chmod +x /etc/penguin/speedtest.py
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Speed Test Python Configured " ; tput sgr0 ; echo ""
-    wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/usuarioteste.sh -O /bin/usuarioteste
-	chmod +x /bin/usuarioteste
-	dos2unix /bin/usuarioteste
+    wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/usuarioteste.sh -O /etc/dragoncore/usuarioteste
+	chmod +x /etc/dragoncore/usuarioteste
+	dos2unix /etc/dragoncore/usuarioteste
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo User Temp Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/banner.sh -O /bin/banner
-	chmod +x /bin/banner
-	dos2unix /bin/banner
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/banner.sh -O /etc/dragoncore/banner
+	chmod +x /etc/dragoncore/banner
+	dos2unix /etc/dragoncore/banner
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Banner Set Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/systemdetails.sh -O /bin/systemdetails
-	chmod +x /bin/systemdetails
-	dos2unix /bin/systemdetails
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/systemdetails.sh -O /etc/dragoncore/systemdetails
+	chmod +x /etc/dragoncore/systemdetails
+	dos2unix /etc/dragoncore/systemdetails
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo System Details Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/updatepack2.sh -O /bin/updatepack
-	chmod +x /bin/updatepack
-	dos2unix /bin/updatepack
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/updatepack2.sh -O /etc/dragoncore/updatepack
+	chmod +x /etc/dragoncore/updatepack
+	dos2unix /etc/dragoncore/updatepack
     tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Update Manager Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/firewallblock.sh -O /bin/firewallblock
-	chmod +x /bin/firewallblock
-	dos2unix /bin/firewallblock
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/firewallblock.sh -O /etc/dragoncore/firewallblock
+	chmod +x /etc/dragoncore/firewallblock
+	dos2unix /etc/dragoncore/firewallblock
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Torrent Firewall Block Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/versao.sh -O /bin/versao
-	chmod +x /bin/versao
-	dos2unix /bin/versao
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/versao.sh -O /etc/dragoncore/versao
+	chmod +x /etc/dragoncore/versao
+	dos2unix /etc/dragoncore/versao
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Version Manager Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/limiter.sh -O /bin/limiter
-	chmod +x /bin/limiter
-	dos2unix /bin/limiter
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/limiter.sh -O /etc/dragoncore/limiter
+	chmod +x /etc/dragoncore/limiter
+	dos2unix /etc/dragoncore/limiter
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Panel Limiter Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/proxypanel2.sh -O /bin/proxypanel
-	chmod +x /bin/proxypanel
-	dos2unix /bin/proxypanel
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/proxypanel2.sh -O /etc/dragoncore/proxypanel
+	chmod +x /etc/dragoncore/proxypanel
+	dos2unix /etc/dragoncore/proxypanel
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Proxy Auth Change Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/badvpnsetup.sh -O /bin/badvpnsetup
-	chmod +x /bin/badvpnsetup
-	dos2unix /bin/badvpnsetup
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/badvpnsetup.sh -O /etc/dragoncore/badvpnsetup
+	chmod +x /etc/dragoncore/badvpnsetup
+	dos2unix /etc/dragoncore/badvpnsetup
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo BadVPNSetup Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/openvpnsetup.sh -O /bin/openvpnsetup
-	chmod +x /bin/openvpnsetup
-	dos2unix /bin/openvpnsetup
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/openvpnsetup.sh -O /etc/dragoncore/openvpnsetup
+	chmod +x /etc/dragoncore/openvpnsetup
+	dos2unix /etc/dragoncore/openvpnsetup
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo OpenVPN Setup Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/tcptweaker.sh -O /bin/tcptweaker
-	chmod +x /bin/tcptweaker
-	dos2unix /bin/tcptweaker
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/tcptweaker.sh -O /etc/dragoncore/tcptweaker
+	chmod +x /etc/dragoncore/tcptweaker
+	dos2unix /etc/dragoncore/tcptweaker
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo TCP Twaker Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/userbackup.sh -O /bin/userbackup
-	chmod +x /bin/userbackup
-	dos2unix /bin/userbackup
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/sh/userbackup.sh -O /etc/dragoncore/userbackup
+	chmod +x /etc/dragoncore/userbackup
+	dos2unix /etc/dragoncore/userbackup
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo User Backup Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/webmininstall.sh -O /bin/webmininstall
-	chmod +x /bin/webmininstall
-	dos2unix /bin/webmininstall
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/webmininstall.sh -O /etc/dragoncore/webmininstall
+	chmod +x /etc/dragoncore/webmininstall
+	dos2unix /etc/dragoncore/webmininstall
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo WEBMIN Installer Online " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/panel2.sh -O /bin/panel2
-	chmod +x /bin/panel2
-	dos2unix /bin/panel2
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/panel2.sh -O /etc/dragoncore/panel2
+	chmod +x /etc/dragoncore/panel2
+	dos2unix /etc/dragoncore/panel2
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Page 2 Panel Installed" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/automaticboot.sh -O /bin/automaticboot
-	chmod +x /bin/automaticboot
-	dos2unix /bin/automaticboot
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/automaticboot.sh -O /etc/dragoncore/automaticboot
+	chmod +x /etc/dragoncore/automaticboot
+	dos2unix /etc/dragoncore/automaticboot
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Automatic BOOT Installed " ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/uninstallvps.sh -O /bin/uninstallvps
-	chmod +x /bin/uninstallvps
-	dos2unix /bin/uninstallvps
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/uninstallvps.sh -O /etc/dragoncore/uninstallvps
+	chmod +x /etc/dragoncore/uninstallvps
+	dos2unix /etc/dragoncore/uninstallvps
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo de desinstalacao de nosso vps manager instalado com sucesso" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/vpntime.sh -O /bin/vpntime
-	chmod +x /bin/vpntime
-	dos2unix /bin/vpntime
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/vpntime.sh -O /etc/dragoncore/vpntime
+	chmod +x /etc/dragoncore/vpntime
+	dos2unix /etc/dragoncore/vpntime
 	cd /$USER 
 	mkdir arquivosopenvpn
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo de OpenVPn Com Validade Instalado" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/vpnauth.sh -O /bin/vpnauth
-	chmod +x /bin/vpnauth
-	dos2unix /bin/vpnauth
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/vpnauth.sh -O /etc/dragoncore/vpnauth
+	chmod +x /etc/dragoncore/vpnauth
+	dos2unix /etc/dragoncore/vpnauth
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo de OpenVPn Com Validade e Proxy Auth Instalado" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/userpassgenerator.sh -O /bin/userpassgenerator
-	chmod +x /bin/userpassgenerator
-	dos2unix /bin/userpassgenerator
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/userpassgenerator.sh -O /etc/dragoncore/userpassgenerator
+	chmod +x /etc/dragoncore/userpassgenerator
+	dos2unix /etc/dragoncore/userpassgenerator
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo UserPass.conf Generator Instalado" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/nloadpanel.sh -O /bin/nloadpanel
-	chmod +x /bin/nloadpanel
-	dos2unix /bin/nloadpanel
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/nloadpanel.sh -O /etc/dragoncore/nloadpanel
+	chmod +x /etc/dragoncore/nloadpanel
+	dos2unix /etc/dragoncore/nloadpanel
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo Nload Panel Instalado" ; tput sgr0 ; echo ""
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo UserPass.conf Generator Instalado" ; tput sgr0 ; echo ""
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/hlemon.sh -O /bin/hlemon
-	chmod +x /bin/hlemon
-	dos2unix /bin/hlemon
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/hlemon.sh -O /etc/dragoncore/hlemon
+	chmod +x /etc/dragoncore/hlemon
+	dos2unix /etc/dragoncore/hlemon
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo HTOP Panel Instalado" ; tput sgr0 ; echo ""
 	clear
-	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/viperx.sh -O /bin/viperx
-	chmod +x /bin/viperx
-	dos2unix /bin/viperx
+	wget -q https://raw.githubusercontent.com/Penguinehis/Viper-X/main/panel/viperx.sh -O /etc/dragoncore/viperx
+	chmod +x /etc/dragoncore/viperx
+	dos2unix /etc/dragoncore/viperx
 	tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Modulo ViperX Instalado " ; tput sgr0 ; echo ""
 	clear
 	echo ""
