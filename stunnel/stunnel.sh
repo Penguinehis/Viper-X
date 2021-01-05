@@ -13,7 +13,8 @@
 #Cyan         0;36     Light Cyan    1;36
 #Light Gray   0;37     White         1;37
 
-
+menu()
+{
 black='\033[0;30m'
 red='\033[0;31m'
 green='\033[0;32m'
@@ -36,8 +37,9 @@ IP=$(wget -q -qO- https://bigbolgames.com)
 clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "SSL TUNNEL" ; tput sgr0 ; echo ""
 tput setaf 7 ; tput setab 4 ; tput bold ; printf "${red}Portas abertas: " ; echo $port | sed -n 's_([^ ]*__p' ; tput sgr0 ; echo ""
-tput setaf 2 ; tput bold ; printf '%s' "|1|"; tput setaf 6 ; printf '%s' " Disable" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Desabilitara a autenticacao por Proxy" ; tput sgr0 ;
-tput setaf 2 ; tput bold ; printf '%s' "|2|"; tput setaf 6 ; printf '%s' " Enable" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Habilitara a autenticacao por Proxy" ; tput sgr0 ;
+tput setaf 2 ; tput bold ; printf '%s' "|1|"; tput setaf 6 ; printf '%s' " Instalar" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Instalar o SSL Tunnel" ; tput sgr0 ;
+tput setaf 2 ; tput bold ; printf '%s' "|2|"; tput setaf 6 ; printf '%s' " Desinstalar" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Remover o SSL Tunnel" ; tput sgr0 ;
+tput setaf 2 ; tput bold ; printf '%s' "|2|"; tput setaf 6 ; printf '%s' " Mudar porta" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Mudar a porta do SSL Tunnel" ; tput sgr0 ;
 tput setaf 2 ; tput bold ; printf '%s' "|0|"; tput setaf 6 ; printf '%s' " Sair" ; tput setaf 4 ; printf '%s' " = " ; tput setaf 7 ; echo "Simplesmente voltara para o menu" ; tput sgr0 ;
 echo ""
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-10s\n' "Digite a opcao desejada" ; tput sgr0 ; echo ""
@@ -50,8 +52,7 @@ case $opcao in
 	0) exit ;;
 esac
 
-
-
+}
 install()
 {
 echo "Por favor digite a porta para o Stunnel"
@@ -65,3 +66,4 @@ echo "Stunnel será instalado na porta $port"
 apt-get update 
 fi
 }
+menu
