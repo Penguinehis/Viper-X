@@ -113,7 +113,7 @@ change()
 {
 clear
 check2=$(lsof -i -P -n | grep LISTEN | grep stunnel | sed -n -e '1{s/^.*://p}')
-printf "Por favor digite a ${red}porta ${white} para o Stunnel: "
+printf "Por favor digite a nova ${red}porta ${white} para o Stunnel: "
 read port
 if [ -z "$port" ]; then
 clear
