@@ -179,6 +179,7 @@ fi
 voltar()
 {
 /etc/dragoncore/panel/viper
+clear
 exit
 }
 menu
